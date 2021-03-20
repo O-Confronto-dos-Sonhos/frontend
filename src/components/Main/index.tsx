@@ -1,8 +1,8 @@
 import * as S from './styles'
 
 export type MainProps = {
-  title: string
-  content: string
+  title?: string
+  content?: string
 }
 
 export const Main = ({

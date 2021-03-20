@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { initializeApollo } from 'services/apollo'
 import { QUERY_HOME } from 'graphql/queries/home'
 
-import { Main } from 'components'
+import { Main } from 'components/Main'
 import { MainProps } from 'components/Main'
 
 type HomeProps = {
