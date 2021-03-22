@@ -6,11 +6,11 @@ import {
 } from '@apollo/client'
 import { useMemo } from 'react'
 
-export const WP_URL = process.env.WORDPRESS_URL
-export const WP_USER = process.env.WORDPRESS_USER
-export const WP_PASS = process.env.WORDPRESS_PASS
+const WP_URL = process.env.WORDPRESS_URL
+const WP_USER = process.env.WORDPRESS_USER
+const WP_PASS = process.env.WORDPRESS_PASS
 
-export const WP_AUTH = Buffer.from(`${WP_USER}:${WP_PASS}`).toString()
+const WP_AUTH = Buffer.from(`${WP_USER}:${WP_PASS}`).toString()
 
 let apolloClient: ApolloClient<NormalizedCacheObject>
 
