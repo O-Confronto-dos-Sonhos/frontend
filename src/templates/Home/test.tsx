@@ -1,11 +1,11 @@
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 
-import { Main } from '.'
+import { Home } from '.'
 
-describe('<Main />', () => {
+describe('<Home />', () => {
   it('should render the heading', () => {
-    const { container } = renderWithTheme(<Main />)
+    const { container } = renderWithTheme(<Home />)
 
     expect(
       screen.getByRole('heading', { name: /nextjs boilerplate/i })
@@ -15,7 +15,7 @@ describe('<Main />', () => {
   })
 
   it('should render the colors correctly', () => {
-    const { container } = renderWithTheme(<Main />)
+    const { container } = renderWithTheme(<Home />)
 
     expect(container.firstChild).toHaveStyleRule('background-color', '#051330')
   })

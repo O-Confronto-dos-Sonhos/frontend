@@ -25,7 +25,7 @@ export const theme = {
     primary: '#f231a5',
     secondary: '#3cd3c1',
     darkBackground: '#051330',
-    lightBackground: '#f2f2f2',
+    lightBackground: '#d1e4dd',
     white: '#fff',
     black: '#030517',
     lighterGray: '#eaeaea',

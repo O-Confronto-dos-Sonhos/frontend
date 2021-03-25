@@ -1,5 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components'
 
+import { theme } from 'styles'
+
 export const GlobalStyles = createGlobalStyle`
   * {
     margin: 0;
@@ -13,7 +15,7 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  ${({ theme }) => css`
+  ${() => css`
     html {
       font-size: 62.5%;
       min-width: 320px;
@@ -22,6 +24,7 @@ export const GlobalStyles = createGlobalStyle`
     body {
       font-family: ${theme.font.family};
       font-size: ${theme.font.sizes.medium};
+      background-color: ${theme.colors.lightBackground};
       scroll-behavior: smooth;
       line-height: 1.2;
       scroll-behavior: smooth;
@@ -31,6 +34,12 @@ export const GlobalStyles = createGlobalStyle`
     body,
     #__next {
       height: 100%;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     input,
