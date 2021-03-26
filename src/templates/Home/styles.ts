@@ -37,14 +37,6 @@ export const PostItem = styled.div`
     font-weight: 400;
     font-size: ${theme.font.sizes.xxlarge};
     margin-bottom: ${theme.spacings.xsmall};
-
-    a {
-      border-bottom: 0.1rem solid ${theme.colors.darkGray};
-
-      &:hover {
-        border-bottom-style: dotted;
-      }
-    }
   }
 
   > span {

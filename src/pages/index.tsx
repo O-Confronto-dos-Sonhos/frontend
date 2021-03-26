@@ -1,23 +1,11 @@
-import Head from 'next/head'
 import { initializeApollo } from 'services/apollo'
-import { QUERY_HOME } from 'graphql/queries/home'
 
 import { Home, HomeTemplateProps } from 'templates/Home'
 
-type IndexProps = HomeTemplateProps
+import { QUERY_HOME } from 'graphql/queries/home'
 
-export default function Index(props: IndexProps) {
-  return (
-    <>
-      <Head>
-        <title>
-          {props.page.title} | {props.allSettings.title}
-        </title>
-      </Head>
-
-      <Home {...props} />
-    </>
-  )
+export default function Index(props: HomeTemplateProps) {
+  return <Home {...props} />
 }
 
 export async function getStaticProps() {

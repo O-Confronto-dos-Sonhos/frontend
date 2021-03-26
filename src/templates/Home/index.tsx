@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Head from 'next/head'
 
 import * as S from './styles'
 
@@ -26,30 +26,34 @@ type PostProps = {
 }
 
 export const Home = ({ page, posts, allSettings }: HomeTemplateProps) => (
-  <S.Container>
-    <S.Header>
-      <S.Title>{allSettings.title}</S.Title>
-      <S.Description dangerouslySetInnerHTML={{ __html: page.content }} />
-    </S.Header>
+  <>
+    <Head>
+      <title>
+        {page.title} | {allSettings.title}
+      </title>
+    </Head>
 
-    <S.Content>
-      {posts.map((post) => (
-        <S.PostItem key={post.id}>
-          <h2>
-            <Link href={`/posts/${post.slug}`}>
-              <a>{post.title}</a>
-            </Link>
-          </h2>
+    <S.Container>
+      <S.Header>
+        <S.Title>{allSettings.title}</S.Title>
+        <S.Description dangerouslySetInnerHTML={{ __html: page.content }} />
+      </S.Header>
 
-          <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+      <S.Content>
+        {posts.map((post) => (
+          <S.PostItem key={post.id}>
+            <h2>{post.title}</h2>
 
-          <span>
-            {new Intl.DateTimeFormat('pt-BR', {
-              dateStyle: 'long',
-            }).format(new Date(post.date))}
-          </span>
-        </S.PostItem>
-      ))}
-    </S.Content>
-  </S.Container>
+            <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+
+            <span>
+              {new Intl.DateTimeFormat('pt-BR', {
+                dateStyle: 'long',
+              }).format(new Date(post.date))}
+            </span>
+          </S.PostItem>
+        ))}
+      </S.Content>
+    </S.Container>
+  </>
 )
